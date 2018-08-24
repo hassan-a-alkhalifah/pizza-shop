@@ -1,11 +1,12 @@
-// Business logic
+// BUSINESS LOGIC
+// pizza constructor
 function Pizza(size) {
   this.pizzaSize = size,
   this.pizzaSauce = "",
   this.pizzaToppings = [],
   this.pizzaTotalCost = 0
 }
-
+// prototype to calculate orders total cost based on selected items
 Pizza.prototype.calculatePizzaCost = function(hasMeat , quantity) {
   if(this.pizzaSize === "Small") {
     this.pizzaTotalCost += 4;
@@ -27,24 +28,29 @@ Pizza.prototype.calculatePizzaCost = function(hasMeat , quantity) {
 
   return this.pizzaTotalCost * quantity;
 }
-
+// prototype to check is a meat topping was selected
 Pizza.prototype.checkingForMeatTopping = function() {
   for(var i = 0; i < 1; i++) {
     console.log(i);
     if(this.pizzaToppings[i] === "pepperoni" || this.pizzaToppings[i] === "ham" || this.pizzaToppings[i] === "chicken" || this.pizzaToppings[i] === "italian sausage" || this.pizzaToppings[i] === "bacon") {
       return true;
+    } else {
+      return false;
     }
   }
 }
 
-// UI logic
+// UI lOGIC
 $(document).ready(function() {
   var yourPizza;
+
   $("#pizza-size-form").submit(function(event) {
     event.preventDefault();
 
     var pizzaSize = $("input:radio[name=pizza-size]:checked").val();
     yourPizza = new Pizza(pizzaSize);
+    var pizzaSizeDescription = yourPizza.pizzaSize;
+    $(".pizza-size").text("Pizza size: " + pizzaSizeDescription);
     $("#size-choice-container").hide();
     $("#sauce-choice-container").show();
   });
@@ -54,6 +60,8 @@ $(document).ready(function() {
 
     var pizzaSauce = $("input:radio[name=sauce]:checked").val();
     yourPizza.pizzaSauce = pizzaSauce;
+    var pizzaSauceDescription = yourPizza.pizzaSauce;
+    $(".sauce-toppings").append(pizzaSauceDescription + ", ");
     $("#sauce-choice-container").hide();
     $("#toppings-choice-container").show();
   });
@@ -64,17 +72,15 @@ $(document).ready(function() {
     $("input[type=checkbox]:checked").each(function(topping) {
       yourPizza.pizzaToppings[topping] = $(this).val();
     });
-    $("#toppings-choice-container").hide();
-    $("#order-summary-container").show();
-  });
-
-  $("#add-order-form").submit(function(event) {
-    event.preventDefault();
-
     var pizzaQuantity = parseInt($("#quantity").val());
     var ifHasMeatTopping = yourPizza.checkingForMeatTopping();
     var totalPrice = yourPizza.calculatePizzaCost(ifHasMeatTopping, pizzaQuantity);
+    $(".sauce-toppings").append(yourPizza.pizzaToppings.join(", "));
+    $("#total-price").text(totalPrice);
+    $(".quantity").text(pizzaQuantity);
+    $("#toppings-choice-container").hide();
+    $("#current-order-description").hide()
+    $("#order-summary-container").show();
     console.log(yourPizza);
-    console.log(totalPrice);
   });
 });

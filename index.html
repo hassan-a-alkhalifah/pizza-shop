@@ -137,7 +137,10 @@
             <label class="form-check-label">Chedder Cheese</label>
           </div>
 
-          <button id="order-summary-btn" class="btn btn-primary" type="submit">Order Summary</button>
+          <label for="quantity">Quantity</label>
+          <input id="quantity" type="number" min="1" max="10">
+
+          <button id="add-order-btn" class="btn btn-primary" type="submit">Add order</button>
         </form>
       </div>
 
@@ -148,25 +151,19 @@
             <span class="sauce-toppings"></span>
           </div>
           <div id="receipt-quantity">
-            <h3>Qty</h3>
-            <span class="quantity"></span>
+            <h3>Qty: <span class="quantity"></span></h3>
           </div>
           <div id="receipt-total-price">
-            <h3>Price</h3>
-            <span id="total-price"></span>
+            <h3>Price: $<span id="total-price"></span>.00</h3>
           </div>
         </div>
 
         <h2 id="thank-you-message">Thank you for your order <span></span>!</h2>
       </div>
 
-      <div id="current-order-quantity-add-btn">
-        <form id="add-order-form">
-          <h3 class="pizza-size"></h3>
-          <span class="sauce-toppings"></span>
-          <input id="quantity" type="number" min="1" max="10">
-          <button id="add-order-btn" class="btn btn-primary" type="submit">Add order</button>
-        </form>
+      <div id="current-order-description">
+        <h3 class="pizza-size"></h3>
+        <span class="sauce-toppings"></span>
       </div>
     </div>
   </body>
