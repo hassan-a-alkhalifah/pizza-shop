@@ -6,7 +6,7 @@ function Pizza(size) {
   this.pizzaTotalCost = 0
 }
 
-Pizza.prototype.calculatePizzaCost = function(hasMeat) {
+Pizza.prototype.calculatePizzaCost = function(hasMeat , quantity) {
   if(this.pizzaSize === "Small") {
     this.pizzaTotalCost += 4;
   } else if(this.pizzaSize === "Medium") {
@@ -20,9 +20,12 @@ Pizza.prototype.calculatePizzaCost = function(hasMeat) {
   } else if(this.pizzaSauce === "garlic parmesan sauce") {
     this.pizzaTotalCost += 2;
   }
+
   if(hasMeat === true) {
     this.pizzaTotalCost += 2;
   }
+
+  return this.pizzaTotalCost * quantity;
 }
 
 Pizza.prototype.checkingForMeatTopping = function() {
@@ -33,6 +36,7 @@ Pizza.prototype.checkingForMeatTopping = function() {
     }
   }
 }
+
 // UI logic
 $(document).ready(function() {
   var yourPizza;
@@ -62,8 +66,15 @@ $(document).ready(function() {
     });
     $("#toppings-choice-container").hide();
     $("#order-summary-container").show();
+  });
+
+  $("#add-order-form").submit(function(event) {
+    event.preventDefault();
+
+    var pizzaQuantity = parseInt($("#quantity").val());
     var ifHasMeatTopping = yourPizza.checkingForMeatTopping();
-    yourPizza.calculatePizzaCost(ifHasMeatTopping);
+    var totalPrice = yourPizza.calculatePizzaCost(ifHasMeatTopping, pizzaQuantity);
     console.log(yourPizza);
+    console.log(totalPrice);
   });
 });
