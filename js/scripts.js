@@ -6,8 +6,32 @@ function Pizza(size) {
   this.pizzaTotalCost = 0
 }
 
-Pizza.prototype.calculatePizzaCost = function() {
+Pizza.prototype.calculatePizzaCost = function(hasMeat) {
+  if(this.pizzaSize === "Small") {
+    this.pizzaTotalCost += 4;
+  } else if(this.pizzaSize === "Medium") {
+    this.pizzaTotalCost += 6;
+  } else if(this.pizzaSize === "Large") {
+    this.pizzaTotalCost += 8;
+  }
 
+  if(this.pizzaSauce === "bbq sauce") {
+    this.pizzaTotalCost += 2;
+  } else if(this.pizzaSauce === "garlic parmesan sauce") {
+    this.pizzaTotalCost += 2;
+  }
+  if(hasMeat === true) {
+    this.pizzaTotalCost += 2;
+  }
+}
+
+Pizza.prototype.checkingForMeatTopping = function() {
+  for(var i = 0; i < 1; i++) {
+    console.log(i);
+    if(this.pizzaToppings[i] === "pepperoni" || this.pizzaToppings[i] === "ham" || this.pizzaToppings[i] === "chicken" || this.pizzaToppings[i] === "italian sausage" || this.pizzaToppings[i] === "bacon") {
+      return true;
+    }
+  }
 }
 // UI logic
 $(document).ready(function() {
@@ -19,7 +43,6 @@ $(document).ready(function() {
     yourPizza = new Pizza(pizzaSize);
     $("#size-choice-container").hide();
     $("#sauce-choice-container").show();
-    console.log(pizzaSize);
   });
 
   $("#pizza-sauce-form").submit(function(event) {
@@ -29,8 +52,6 @@ $(document).ready(function() {
     yourPizza.pizzaSauce = pizzaSauce;
     $("#sauce-choice-container").hide();
     $("#toppings-choice-container").show();
-    console.log(yourPizza.pizzaSauce);
-    console.log(yourPizza);
   });
 
   $("#pizza-toppings-form").submit(function(event) {
@@ -41,7 +62,8 @@ $(document).ready(function() {
     });
     $("#toppings-choice-container").hide();
     $("#order-summary-container").show();
-    console.log(yourPizza.pizzaToppings);
+    var ifHasMeatTopping = yourPizza.checkingForMeatTopping();
+    yourPizza.calculatePizzaCost(ifHasMeatTopping);
     console.log(yourPizza);
   });
 });
