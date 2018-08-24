@@ -18,7 +18,7 @@
 #sauce-choice-container, #toppings-choice-container, #order-summary-container {
   display: none;
 }
-#size-choice-container, #sauce-choice-container, #toppings-choice-container {
+#size-choice-container, #sauce-choice-container, #toppings-choice-container, #order-summary-container {
   padding-top: 70px;
   position: relative;
   border-left: 2px solid #000;
@@ -120,6 +120,9 @@
 }
 .form-check-label {
     font-size: 20px;
+}
+#order-summary-container {
+  text-align: center;
 }
 button {
   display: block!important;
