@@ -15,7 +15,10 @@
   margin-bottom: 0;
   box-shadow: 0 0 10px #000;
 }
-#size-choice-container {
+#sauce-choice-container, #toppings-choice-container, #order-summary-container {
+  display: none;
+}
+#size-choice-container, #sauce-choice-container {
   padding-top: 70px;
   position: relative;
   height: 720px;
@@ -26,10 +29,10 @@
   border-bottom-right-radius: 10px;
   box-shadow: 0 0 10px #000;
 }
-#size-choice-container h2{
+#size-choice-container h2, #sauce-choice-container h2{
   text-align: center;
 }
-#pizza-size-form {
+#pizza-size-form, #pizza-sauce-form {
   width: 300px;
   margin: 40px auto 0 auto;
 }
@@ -94,18 +97,22 @@
   top: 40px;
   left: 40px;
 }
-#additional-sauces-btn {
-  display: block;
+#pizza-sauce-form .radio {
+  padding-left: 50px;
+  font-size: 20px;
+}
+#current-order-description {
+    display: block;
+    margin: 40px auto 0 auto;
+    width: 300px;
+}
+#current-order-description h2, #current-order-description .pizza-size{
+    text-align: center;
+}
+button {
+  display: block!important;
   margin: 40px auto 0 auto;
   height: 60px;
-  font-size: 20px;
+  font-size: 20px!important;
   box-shadow: 0 0 10px #000;
-}
-#sauce-choice-container, #toppings-choice-container, #order-summary-container {
-  display: none;
-}
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
 }
