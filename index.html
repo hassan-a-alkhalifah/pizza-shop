@@ -15,82 +15,130 @@
 
       <div id="size-choice-container">
         <h2>Choose Your Size</h2>
-        <div class="radio">
-          <label>
-            <input type="radio" name="pizza" value="Small">
-            <span class="pizza">$4</span>
-            <span>Small</span>
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="pizza" value="Medium">
-            <span class="pizza">$6</span>
-            <span>Medium</span>
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="pizza" value="Large">
-            <span class="pizza">$8</span>
-            <span>Large</span>
-          </label>
-        </div>
-        <button id="additional-sauces-btn" class="btn btn-primary" type="button">Additional Sauces</button>
+
+        <form id="pizza-size-form">
+          <div class="radio">
+            <label>
+              <input type="radio" name="pizza-size" value="Small">
+              <span class="pizza">$4</span>
+              <span>Small</span>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pizza-size" value="Medium">
+              <span class="pizza">$6</span>
+              <span>Medium</span>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pizza-size" value="Large">
+              <span class="pizza">$8</span>
+              <span>Large</span>
+            </label>
+          </div>
+
+          <button id="additional-sauces-btn" class="btn btn-primary" type="submit">Additional Sauces</button>
+        </form>
       </div>
 
       <div id="sauce-choice-container">
         <h2>Choose Your Sauce</h2>
-        <div class="radio">
-          <label>
-            <input type="radio" name="sauce" value="tomato sauce">
-            <span>Tomato Sauce</span>
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="sauce" value="bbq sauce">
-            <span>BBQ Sauce</span>
-            <span>+$2.00</span>
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="sauce" value="Garlic Parmesan sauce">
-            <span>Garlic Parmesan Sauce</span>
-            <span>+$2.00</span>
-          </label>
-        </div>
-        <button id="additional-toppings-btn" class="btn btn-primary" type="button">Additional Toppings</button>
+
+        <form id="pizza-sauce-form">
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="tomato sauce">
+              <span>Tomato Sauce</span>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="bbq sauce">
+              <span>BBQ Sauce</span>
+              <span>+$2.00</span>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="Garlic Parmesan sauce">
+              <span>Garlic Parmesan Sauce</span>
+              <span>+$2.00</span>
+            </label>
+          </div>
+
+          <button id="additional-toppings-btn" class="btn btn-primary" type="submit">Additional Toppings</button>
+        </form>
       </div>
 
       <div id="toppings-choice-container">
         <h2>Choose Your Toppings</h2>
-        <div id="meats-container">
-          <h3>Meats</h3>
-          <select class="form-control">
-            <option value="pepperoni">Pepperoni</option>
-            <option value="ham">Ham</option>
-            <option value="chicken">Chicken</option>
-            <option value="italian sausage">Italian Sausage</option>
-            <option value="bacon">Bacon</option>
-          </select>
+
+        <h3>Meats</h3>
+        <form id="pizza-toppings-form">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="pepperoni">
+            <label class="form-check-label">Pepperoni</label>
+          </div>
+          <div class="form-check">
+            <input  type="checkbox" class="form-check-input" value="ham">
+            <label class="form-check-label">Ham</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="chicken">
+            <label class="form-check-label">Chicken</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="italian sausage">
+            <label class="form-check-label">Italian Sausage</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="bacon">
+            <label class="form-check-label">Bacon</label>
+          </div>
           <span>Total meat toppings is +$1.00</span>
-        </div>
-        <div id="veggies-container">
+
           <h3>Veggies</h3>
-          <select class="form-control">
-            <option value="green peppers">Green Peppers</option>
-            <option value="black olives">Black Olives</option>
-            <option value="spinach">Spinach</option>
-            <option value="mushrooms">Mushrooms</option>
-            <option value="jalapena peppers">Jalapena Peppers</option>
-            <option value="onions">Onions</option>
-            <option value="banana peppers">Banana Peppers</option>
-            <option value="feta cheese">Feda Cheese</option>
-            <option value="chedder cheese">Cheeder Cheese</option>
-          </select>
-        </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="green peppers">
+            <label class="form-check-label">Green Peppers</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="black olives">
+            <label class="form-check-label">Black Olives</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="spinach">
+            <label class="form-check-label">Spinach</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="mushrooms">
+            <label class="form-check-label">Mushrooms</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="jalapena peppers">
+            <label class="form-check-label">Jalapena Peppers</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="onions">
+            <label class="form-check-label">Onions</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="banana peppers">
+            <label class="form-check-label">Banana Peppers</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="feta cheese">
+            <label class="form-check-label">Feta Cheese</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="chedder cheese">
+            <label class="form-check-label">Chedder Cheese</label>
+          </div>
+
+          <button id="order-summary-btn" class="btn btn-primary" type="submit">Order Summary</button>
+        </form>
       </div>
 
       <div id="order-summary-container">
