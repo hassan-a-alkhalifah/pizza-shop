@@ -9,32 +9,32 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <h1>Slap Me A Slice</h1>
+    <h1 id="company-name">Slap Me A Slice</h1>
     <div class="container">
       <h2 id="pizza-builder-title">Pizza Builder</h2>
 
-      <div id="size-choice-container">
+      <div id="size-choice-container" class=".clearfix">
         <h2>Choose Your Size</h2>
 
         <form id="pizza-size-form">
           <div class="radio">
             <label>
               <input type="radio" name="pizza-size" value="Small">
-              <span class="pizza">$4</span>
+              <div id="sm" class="pizza"><p>$4</p></div>
               <span>Small</span>
             </label>
           </div>
           <div class="radio">
             <label>
               <input type="radio" name="pizza-size" value="Medium">
-              <span class="pizza">$6</span>
+              <div id="md" class="pizza"><p>$6</p></div>
               <span>Medium</span>
             </label>
           </div>
           <div class="radio">
             <label>
               <input type="radio" name="pizza-size" value="Large">
-              <span class="pizza">$8</span>
+              <div id="lg" class="pizza"><p>$8</p></div>
               <span>Large</span>
             </label>
           </div>

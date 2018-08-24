@@ -1,3 +1,111 @@
+.container {
+  padding: 0;
+}
+#company-name {
+  text-align: center;
+}
+#pizza-builder-title {
+  text-align: center;
+  background-color: gray;
+  color: #FFF;
+  border: 2px solid #000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 20px 0;
+  margin-bottom: 0;
+  box-shadow: 0 0 10px #000;
+}
+#size-choice-container {
+  padding-top: 70px;
+  position: relative;
+  height: 720px;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+#size-choice-container h2{
+  text-align: center;
+}
+#pizza-size-form {
+  width: 300px;
+  margin: 40px auto 0 auto;
+}
+#pizza-size-form input{
+  display: none;
+}
+#pizza-size-form .radio:nth-child(1){
+  margin-left: 100px;
+}
+#pizza-size-form .radio:nth-child(2){
+  margin-left: 85px;
+}
+#pizza-size-form .radio:nth-child(3){
+  margin-left: 75px;
+}
+#pizza-size-form .pizza, #pizza-size-form span{
+  font-size: 20px;
+  font-weight: bold;
+}
+#pizza-size-form .radio:nth-child(1) span{
+  padding-left: 2px;
+}
+#pizza-size-form .radio:nth-child(2) span{
+  padding-left: 7px;
+}
+#pizza-size-form .radio:nth-child(3) span{
+  padding-left: 30px;
+}
+#pizza-size-form .pizza {
+  position: relative;
+  border: 6px solid #bc9e7e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 1px #000;
+  background-color: #f49e42;
+  height: 60px;
+  width: 60px;
+}
+#pizza-size-form #sm {
+  height: 60px;
+  width: 60px;
+}
+#pizza-size-form #md {
+  height: 90px;
+  width: 90px;
+}
+#pizza-size-form #lg {
+  height: 120px;
+  width: 120px;
+}
+#pizza-size-form .pizza p {
+  position: absolute;
+}
+#pizza-size-form #sm p {
+  top: 11px;
+  left: 11px;
+}
+#pizza-size-form #md p {
+  top: 25px;
+  left: 25px;
+}
+#pizza-size-form #lg p {
+  top: 40px;
+  left: 40px;
+}
+#additional-sauces-btn {
+  display: block;
+  margin: 40px auto 0 auto;
+  height: 60px;
+  font-size: 20px;
+  box-shadow: 0 0 10px #000;
+}
 #sauce-choice-container, #toppings-choice-container, #order-summary-container {
   display: none;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
