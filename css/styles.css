@@ -15,10 +15,10 @@
   margin-bottom: 0;
   box-shadow: 0 0 10px #000;
 }
-#sauce-choice-container, #toppings-choice-container, #order-summary-container {
+#size-choice-container, #sauce-choice-container, #toppings-choice-container, #order-summary-container {
   display: none;
 }
-#size-choice-container, #sauce-choice-container, #toppings-choice-container, #order-summary-container {
+#size-choice-container, #sauce-choice-container, #toppings-choice-container, #order-summary-container, #home-page-container {
   padding-top: 70px;
   position: relative;
   border-left: 2px solid #000;
@@ -31,6 +31,17 @@
 }
 #size-choice-container h2, #sauce-choice-container h2, #toppings-choice-container h2{
   text-align: center;
+}
+#customer-name-form .form-group {
+    font-size: 20px;
+    text-align: center;
+}
+#customer-name-form .form-control {
+  width: 300px;
+  margin: 0 auto;
+}
+#customer-name-form label {
+  margin-bottom: 30px;
 }
 #pizza-size-form, #pizza-sauce-form {
   width: 300px;

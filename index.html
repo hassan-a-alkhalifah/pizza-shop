@@ -13,6 +13,17 @@
     <div class="container">
       <h2 id="pizza-builder-title">Pizza Builder</h2>
 
+      <div id="home-page-container">
+        <form id="customer-name-form">
+          <div class="form-group">
+            <label>Enter your name: </label>
+            <input id="customer-name-input" class="form-control" type="text" required>
+          </div>
+
+          <button id="create-your-pizza-btn"class="btn btn-primary" type="submit">Create Your Pizza</button>
+        </form>
+      </div>
+
       <div id="size-choice-container">
         <h2>Choose Your Size</h2>
 
@@ -152,7 +163,7 @@
 
           <div id="quantity-container">
             <label for="quantity">Quantity: </label>
-            <input id="quantity" type="number" min="1" max="10">
+            <input id="quantity" type="number" min="1" max="10" required>
           </div>
 
           <button id="add-order-btn" class="btn btn-primary" type="submit">Add order</button>
@@ -180,7 +191,7 @@
           </div>
         </div>
 
-        <h2 id="thank-you-message">Thank you for your order <span></span>!</h2>
+        <h2 id="thank-you-message">Thank you for your order <span id="customer-name"></span>!</h2>
       </div>
 
     </div>

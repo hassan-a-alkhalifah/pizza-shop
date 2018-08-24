@@ -1,7 +1,8 @@
 // BUSINESS LOGIC
 // pizza constructor
-function Pizza(size) {
-  this.pizzaSize = size,
+function Pizza(name) {
+  this.customerName = name;
+  this.pizzaSize = "",
   this.pizzaSauce = "",
   this.pizzaToppings = [],
   this.pizzaTotalCost = 0
@@ -44,13 +45,21 @@ Pizza.prototype.checkingForMeatTopping = function() {
 $(document).ready(function() {
   var yourPizza;
 
+  $("#customer-name-form").submit(function(event) {
+    event.preventDefault();
+
+    var customerName = $("#customer-name-input").val();
+    yourPizza = new Pizza(customerName);
+    $("#home-page-container").hide();
+    $("#size-choice-container").show();
+  });
+
   $("#pizza-size-form").submit(function(event) {
     event.preventDefault();
 
     var pizzaSize = $("input:radio[name=pizza-size]:checked").val();
-    yourPizza = new Pizza(pizzaSize);
-    var pizzaSizeDescription = yourPizza.pizzaSize;
-    $(".pizza-size").text("Pizza size: " + pizzaSizeDescription);
+    yourPizza.pizzaSize = pizzaSize;
+    $(".pizza-size").text("Pizza size: " + yourPizza.pizzaSize);
     $("#size-choice-container").hide();
     $("#sauce-choice-container").show();
   });
@@ -78,6 +87,7 @@ $(document).ready(function() {
     $(".sauce-toppings").append(yourPizza.pizzaToppings.join(", "));
     $("#total-price").text(totalPrice);
     $(".quantity").text(pizzaQuantity);
+    $("#customer-name").text(yourPizza.customerName);
     $("#toppings-choice-container").hide();
     $("#current-order-description").hide()
     $("#order-summary-container").show();
