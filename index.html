@@ -9,6 +9,115 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
+    <h1>Slap Me A Slice</h1>
+    <div class="container">
+      <h2 id="pizza-builder-title">Pizza Builder</h2>
 
+      <div id="size-choice-container">
+        <h2>Choose Your Size</h2>
+        <div class="radio">
+          <label>
+            <input type="radio" name="pizza" value="Small">
+            <span class="pizza">$4</span>
+            <span>Small</span>
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="pizza" value="Medium">
+            <span class="pizza">$6</span>
+            <span>Medium</span>
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="pizza" value="Large">
+            <span class="pizza">$8</span>
+            <span>Large</span>
+          </label>
+        </div>
+        <button id="additional-sauces-btn" class="btn btn-primary" type="button">Additional Sauces</button>
+      </div>
+
+      <div id="sauce-choice-container">
+        <h2>Choose Your Sauce</h2>
+        <div class="radio">
+          <label>
+            <input type="radio" name="sauce" value="tomato sauce">
+            <span>Tomato Sauce</span>
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="sauce" value="bbq sauce">
+            <span>BBQ Sauce</span>
+            <span>+$2.00</span>
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="sauce" value="Garlic Parmesan sauce">
+            <span>Garlic Parmesan Sauce</span>
+            <span>+$2.00</span>
+          </label>
+        </div>
+        <button id="additional-toppings-btn" class="btn btn-primary" type="button">Additional Toppings</button>
+      </div>
+
+      <div id="toppings-choice-container">
+        <h2>Choose Your Toppings</h2>
+        <div id="meats-container">
+          <h3>Meats</h3>
+          <select class="form-control">
+            <option value="pepperoni">Pepperoni</option>
+            <option value="ham">Ham</option>
+            <option value="chicken">Chicken</option>
+            <option value="italian sausage">Italian Sausage</option>
+            <option value="bacon">Bacon</option>
+          </select>
+          <span>Total meat toppings is +$1.00</span>
+        </div>
+        <div id="veggies-container">
+          <h3>Veggies</h3>
+          <select class="form-control">
+            <option value="green peppers">Green Peppers</option>
+            <option value="black olives">Black Olives</option>
+            <option value="spinach">Spinach</option>
+            <option value="mushrooms">Mushrooms</option>
+            <option value="jalapena peppers">Jalapena Peppers</option>
+            <option value="onions">Onions</option>
+            <option value="banana peppers">Banana Peppers</option>
+            <option value="feta cheese">Feda Cheese</option>
+            <option value="chedder cheese">Cheeder Cheese</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="order-summary-container">
+        <div id="receipt">
+          <div id="receipt-description">
+            <h3 class="pizza-size"></h3>
+            <span class="sauce-toppings"></span>
+          </div>
+          <div id="receipt-quantity">
+            <h3>Qty</h3>
+            <span class="quantity"></span>
+          </div>
+          <div id="receipt-total-price">
+            <h3>Price</h3>
+            <span id="total-price"></span>
+          </div>
+        </div>
+
+        <h2 id="thank-you-message">Thank you for your order <span></span>!</h2>
+      </div>
+
+      <div id="current-order-quantity-add-btn">
+        <h3 class="pizza-size"></h3>
+        <span class="sauce-toppings"></span>
+        <input id="quantity" type="number" min="1" max="10">
+        <button id="add-order-btn" class="btn btn-primary" type="button">Add order</button>
+      </div>
+    </div>
   </body>
 </html>
