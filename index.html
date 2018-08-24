@@ -71,7 +71,7 @@
           <button id="additional-toppings-btn" class="btn btn-primary" type="submit">Additional Toppings</button>
         </form>
 
-        <div id="current-order-description">
+        <div class="current-order-description">
           <h2>Your current order</h2>
           <h3 class="pizza-size"></h3>
           <span class="sauce-toppings"></span>
@@ -81,73 +81,88 @@
       <div id="toppings-choice-container">
         <h2>Choose Your Toppings</h2>
 
-        <h3>Meats</h3>
         <form id="pizza-toppings-form">
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input meat" value="pepperoni">
-            <label class="form-check-label">Pepperoni</label>
-          </div>
-          <div class="form-check">
-            <input  type="checkbox" class="form-check-input meat" value="ham">
-            <label class="form-check-label">Ham</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input meat" value="chicken">
-            <label class="form-check-label">Chicken</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input meat" value="italian sausage">
-            <label class="form-check-label">Italian Sausage</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input meat" value="bacon">
-            <label class="form-check-label">Bacon</label>
-          </div>
-          <span>Total meat toppings is +$2.00</span>
 
-          <h3>Veggies</h3>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="green peppers">
-            <label class="form-check-label">Green Peppers</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="black olives">
-            <label class="form-check-label">Black Olives</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="spinach">
-            <label class="form-check-label">Spinach</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="mushrooms">
-            <label class="form-check-label">Mushrooms</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="jalapena peppers">
-            <label class="form-check-label">Jalapena Peppers</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="onions">
-            <label class="form-check-label">Onions</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="banana peppers">
-            <label class="form-check-label">Banana Peppers</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="feta cheese">
-            <label class="form-check-label">Feta Cheese</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="chedder cheese">
-            <label class="form-check-label">Chedder Cheese</label>
+          <div class="row">
+            <div class="col-sm-6">
+              <h3>Meats</h3>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input meat" value="pepperoni">
+                <label class="form-check-label">Pepperoni</label>
+              </div>
+              <div class="form-check">
+                <input  type="checkbox" class="form-check-input meat" value="ham">
+                <label class="form-check-label">Ham</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input meat" value="chicken">
+                <label class="form-check-label">Chicken</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input meat" value="italian sausage">
+                <label class="form-check-label">Italian Sausage</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input meat" value="bacon">
+                <label class="form-check-label">Bacon</label>
+              </div>
+              <p id="additional-cost-message">*Total meat toppings is +$2.00</p>
+            </div>
+
+            <div class="col-sm-6">
+              <h3>Veggies</h3>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="green peppers">
+                <label class="form-check-label">Green Peppers</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="black olives">
+                <label class="form-check-label">Black Olives</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="spinach">
+                <label class="form-check-label">Spinach</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="mushrooms">
+                <label class="form-check-label">Mushrooms</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="jalapena peppers">
+                <label class="form-check-label">Jalapena Peppers</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="onions">
+                <label class="form-check-label">Onions</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="banana peppers">
+                <label class="form-check-label">Banana Peppers</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="feta cheese">
+                <label class="form-check-label">Feta Cheese</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="chedder cheese">
+                <label class="form-check-label">Chedder Cheese</label>
+              </div>
+            </div>
           </div>
 
-          <label for="quantity">Quantity</label>
-          <input id="quantity" type="number" min="1" max="10">
+          <div id="quantity-container">
+            <label for="quantity">Quantity: </label>
+            <input id="quantity" type="number" min="1" max="10">
+          </div>
 
           <button id="add-order-btn" class="btn btn-primary" type="submit">Add order</button>
         </form>
+
+        <div class="current-order-description">
+          <h2>Your current order</h2>
+          <h3 class="pizza-size"></h3>
+          <span class="sauce-toppings"></span>
+        </div>
       </div>
 
       <div id="order-summary-container">

@@ -18,18 +18,18 @@
 #sauce-choice-container, #toppings-choice-container, #order-summary-container {
   display: none;
 }
-#size-choice-container, #sauce-choice-container {
+#size-choice-container, #sauce-choice-container, #toppings-choice-container {
   padding-top: 70px;
   position: relative;
-  height: 720px;
   border-left: 2px solid #000;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 0 0 10px #000;
+  padding-bottom: 80px;
 }
-#size-choice-container h2, #sauce-choice-container h2{
+#size-choice-container h2, #sauce-choice-container h2, #toppings-choice-container h2{
   text-align: center;
 }
 #pizza-size-form, #pizza-sauce-form {
@@ -101,13 +101,25 @@
   padding-left: 50px;
   font-size: 20px;
 }
-#current-order-description {
+.current-order-description {
     display: block;
     margin: 40px auto 0 auto;
     width: 300px;
-}
-#current-order-description h2, #current-order-description .pizza-size{
     text-align: center;
+}
+#pizza-toppings-form h3, #additional-cost-message {
+  text-align: center;
+}
+#pizza-toppings-form .form-check {
+  padding-left: 30%;
+}
+#quantity-container {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+}
+.form-check-label {
+    font-size: 20px;
 }
 button {
   display: block!important;
