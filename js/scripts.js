@@ -53,7 +53,13 @@ $(document).ready(function() {
     $("#home-page-container").hide();
     $("#size-choice-container").show();
   });
+  // click event of pizza size page to provide focused colors to chosen size to allow user to know which option was chosen
+  $(".pizza").click(function() {
+    $(".pizza").removeClass("chosen");
+    $(this).addClass("chosen");
+  });
 
+  // submit event to take users pizza size and store in object. Also to hide current container and reveal pizza sauce container
   $("#pizza-size-form").submit(function(event) {
     event.preventDefault();
 
@@ -64,6 +70,7 @@ $(document).ready(function() {
     $("#sauce-choice-container").show();
   });
 
+  // submit event to take users sauce choice and store in object. Also to hide current container and reveal pizza toppings container
   $("#pizza-sauce-form").submit(function(event) {
     event.preventDefault();
 
@@ -75,6 +82,7 @@ $(document).ready(function() {
     $("#toppings-choice-container").show();
   });
 
+  // submit event to take users toppings choice and store in object. Also to hide current container and reveal order summary container. As well to provide provide total order value to customer
   $("#pizza-toppings-form").submit(function(event) {
     event.preventDefault();
 
@@ -91,6 +99,5 @@ $(document).ready(function() {
     $("#toppings-choice-container").hide();
     $("#current-order-description").hide()
     $("#order-summary-container").show();
-    console.log(yourPizza);
   });
 });

@@ -14,10 +14,11 @@
       <h2 id="pizza-builder-title">Pizza Builder</h2>
 
       <div id="home-page-container">
+        <h3>Welcome to Slap Me A Slice. Where the taste of our pizza with slap you right off your seat.</h3>
+        <h4>We like to know our customers, so if you don't mind, please provide us your with name.</h4>
         <form id="customer-name-form">
           <div class="form-group">
-            <label>Enter your name: </label>
-            <input id="customer-name-input" class="form-control" type="text" required>
+            <input id="customer-name-input" class="form-control" type="text" required placeholder="Enter your name here">
           </div>
 
           <button id="create-your-pizza-btn"class="btn btn-primary" type="submit">Create Your Pizza</button>
@@ -30,7 +31,7 @@
         <form id="pizza-size-form">
           <div class="radio">
             <label>
-              <input type="radio" name="pizza-size" value="Small">
+              <input type="radio" name="pizza-size" value="Small" required>
               <div id="sm" class="pizza"><p>$4</p></div>
               <span>Small</span>
             </label>

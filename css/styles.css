@@ -1,10 +1,19 @@
+body {
+  background-color: #057bba;
+}
 .container {
   padding: 0;
 }
+/*--- HEADER STYLES ---*/
 #company-name {
   text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-shadow: 0 0 5px #000;
+  color: #F56924;
+  font-size: 50px;
 }
 #pizza-builder-title {
+  font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
   background-color: gray;
   color: #FFF;
@@ -14,6 +23,8 @@
   padding: 20px 0;
   margin-bottom: 0;
   box-shadow: 0 0 10px #000;
+  text-shadow: 0 0 3px #000;
+  font-weight: bold;
 }
 #size-choice-container, #sauce-choice-container, #toppings-choice-container, #order-summary-container {
   display: none;
@@ -28,13 +39,31 @@
   border-bottom-right-radius: 10px;
   box-shadow: 0 0 10px #000;
   padding-bottom: 80px;
+  background-color: #EEE;
 }
-#size-choice-container h2, #sauce-choice-container h2, #toppings-choice-container h2{
+#size-choice-container h2, #sauce-choice-container h2, #toppings-choice-container h2, #order-summary-container h2{
   text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/*--- HOME PAGE STYLES ---*/
+#home-page-container {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+#home-page-container h3, #home-page-container h4 {
+  text-align: center;
+}
+#home-page-container h3{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+#home-page-container h4{
+  margin-bottom: 40px;
 }
 #customer-name-form .form-group {
     font-size: 20px;
-    text-align: center;
 }
 #customer-name-form .form-control {
   width: 300px;
@@ -43,6 +72,8 @@
 #customer-name-form label {
   margin-bottom: 30px;
 }
+
+/*--- CHOOSE YOUR SIZE CONTAINER STYLES ---*/
 #pizza-size-form, #pizza-sauce-form {
   width: 300px;
   margin: 40px auto 0 auto;
@@ -74,12 +105,20 @@
 }
 #pizza-size-form .pizza {
   position: relative;
-  border: 6px solid #bc9e7e;
+  border: 6px solid #BC9E7E;
   border-radius: 50%;
   box-shadow: 0 0 10px 1px #000;
-  background-color: #f49e42;
+  background-color: #F49E42;
   height: 60px;
   width: 60px;
+}
+#pizza-size-form .pizza:hover, #pizza-size-form .pizza:active {
+  border: 6px solid #87735D;
+  background-color: #D28839;
+}
+.chosen {
+  border: 6px solid #87735D!important;
+  background-color: #D28839!important;
 }
 #pizza-size-form #sm {
   height: 60px;
@@ -108,16 +147,14 @@
   top: 40px;
   left: 40px;
 }
+
+/*--- CHOOSE YOUR SAUCE CONTAINER STYLES ---*/
 #pizza-sauce-form .radio {
   padding-left: 50px;
   font-size: 20px;
 }
-.current-order-description {
-    display: block;
-    margin: 40px auto 0 auto;
-    width: 300px;
-    text-align: center;
-}
+
+/*--- CHOOSE YOUR TOPPINGS CONTAINER STYLES ---*/
 #pizza-toppings-form h3, #additional-cost-message {
   text-align: center;
 }
@@ -132,8 +169,18 @@
 .form-check-label {
     font-size: 20px;
 }
+
+/*--- ORDER SUMMARY CONTAINER STYLES ---*/
 #order-summary-container {
   text-align: center;
+}
+
+/*--- ADDITIONAL STYLES ---*/
+.current-order-description {
+    display: block;
+    margin: 40px auto 0 auto;
+    width: 300px;
+    text-align: center;
 }
 button {
   display: block!important;
