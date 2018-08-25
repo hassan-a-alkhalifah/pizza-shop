@@ -4,6 +4,7 @@ body {
 .container {
   padding: 0;
 }
+
 /*--- HEADER STYLES ---*/
 #company-name {
   text-align: center;
@@ -79,7 +80,8 @@ body {
   margin: 40px auto 0 auto;
 }
 #pizza-size-form input{
-  display: none;
+  /* display: none; */
+  opacity: 0;
 }
 #pizza-size-form .radio:nth-child(1){
   margin-left: 100px;

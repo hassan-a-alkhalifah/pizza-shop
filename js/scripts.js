@@ -7,13 +7,13 @@ function Pizza(name) {
   this.pizzaToppings = [],
   this.pizzaTotalCost = 0
 }
-// prototype to calculate orders total cost based on selected items
+// prototype to calculate order's total cost based on selected items
 Pizza.prototype.calculatePizzaCost = function(hasMeat , quantity) {
   if(this.pizzaSize === "Small") {
     this.pizzaTotalCost += 4;
   } else if(this.pizzaSize === "Medium") {
     this.pizzaTotalCost += 6;
-  } else if(this.pizzaSize === "Large") {
+  } else {
     this.pizzaTotalCost += 8;
   }
 
@@ -43,59 +43,59 @@ Pizza.prototype.checkingForMeatTopping = function() {
 
 // UI lOGIC
 $(document).ready(function() {
-  var yourPizza;
+  var customerPizza;
 
   $("#customer-name-form").submit(function(event) {
     event.preventDefault();
 
     var customerName = $("#customer-name-input").val();
-    yourPizza = new Pizza(customerName);
+    customerPizza = new Pizza(customerName);
     $("#home-page-container").hide();
     $("#size-choice-container").show();
   });
-  // click event of pizza size page to provide focused colors to chosen size to allow user to know which option was chosen
+  // click event for pizza size page to provide focused colors to chosen size to allow user to know which option was chosen
   $(".pizza").click(function() {
     $(".pizza").removeClass("chosen");
     $(this).addClass("chosen");
   });
 
-  // submit event to take users pizza size and store in object. Also to hide current container and reveal pizza sauce container
+  // submit event to take user's pizza size and store in current object. Also to hide current container and reveal pizza sauce container
   $("#pizza-size-form").submit(function(event) {
     event.preventDefault();
 
     var pizzaSize = $("input:radio[name=pizza-size]:checked").val();
-    yourPizza.pizzaSize = pizzaSize;
-    $(".pizza-size").text("Pizza size: " + yourPizza.pizzaSize);
+    customerPizza.pizzaSize = pizzaSize;
+    $(".pizza-size").text("Pizza size: " + customerPizza.pizzaSize);
     $("#size-choice-container").hide();
     $("#sauce-choice-container").show();
   });
 
-  // submit event to take users sauce choice and store in object. Also to hide current container and reveal pizza toppings container
+  // submit event to take user's sauce choice and store in object. Also to hide current container and reveal pizza toppings container
   $("#pizza-sauce-form").submit(function(event) {
     event.preventDefault();
 
     var pizzaSauce = $("input:radio[name=sauce]:checked").val();
-    yourPizza.pizzaSauce = pizzaSauce;
-    var pizzaSauceDescription = yourPizza.pizzaSauce;
+    customerPizza.pizzaSauce = pizzaSauce;
+    var pizzaSauceDescription = customerPizza.pizzaSauce;
     $(".sauce-toppings").append(pizzaSauceDescription + ", ");
     $("#sauce-choice-container").hide();
     $("#toppings-choice-container").show();
   });
 
-  // submit event to take users toppings choice and store in object. Also to hide current container and reveal order summary container. As well to provide provide total order value to customer
+  // submit event to take user's toppings choice and store in object. Also to hide current container and reveal order summary container. As well to provide total order value to customer in message
   $("#pizza-toppings-form").submit(function(event) {
     event.preventDefault();
 
     $("input[type=checkbox]:checked").each(function(topping) {
-      yourPizza.pizzaToppings[topping] = $(this).val();
+      customerPizza.pizzaToppings[topping] = $(this).val();
     });
     var pizzaQuantity = parseInt($("#quantity").val());
-    var ifHasMeatTopping = yourPizza.checkingForMeatTopping();
-    var totalPrice = yourPizza.calculatePizzaCost(ifHasMeatTopping, pizzaQuantity);
-    $(".sauce-toppings").append(yourPizza.pizzaToppings.join(", "));
+    var ifHasMeatTopping = customerPizza.checkingForMeatTopping();
+    var totalPrice = customerPizza.calculatePizzaCost(ifHasMeatTopping, pizzaQuantity);
+    $(".sauce-toppings").append(customerPizza.pizzaToppings.join(", "));
     $("#total-price").text(totalPrice);
     $(".quantity").text(pizzaQuantity);
-    $("#customer-name").text(yourPizza.customerName);
+    $("#customer-name").text(customerPizza.customerName);
     $("#toppings-choice-container").hide();
     $("#current-order-description").hide()
     $("#order-summary-container").show();
